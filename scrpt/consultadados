@@ -1,0 +1,9 @@
+CREATE TABLE `consultadados` (
+  `cpf` varchar(14) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `sobrenome` varchar(60) NOT NULL,
+  `cidade` varchar(60) NOT NULL,
+  `uf` varchar(2) NOT NULL,
+  `telefone` varchar(60) NOT NULL,
+  PRIMARY KEY (`cpf`)
+  );
