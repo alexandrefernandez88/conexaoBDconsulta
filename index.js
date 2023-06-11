@@ -5,7 +5,7 @@ import os from "os";
 const app = express();
 const porta = 3000;
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.get('/', (request, response) => {
     return response

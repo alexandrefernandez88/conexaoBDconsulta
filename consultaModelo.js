@@ -17,12 +17,14 @@ export default class Consulta {
         this.#telefone = telefone;
     }
 
+    
     get cpf() {
         return this.#cpf;
     }
     set cpf(novoCpf) {
         this.#cpf = novoCpf;
     }
+
 
     get nome() {
         return this.#nome;
@@ -31,12 +33,14 @@ export default class Consulta {
         this.#nome = novoNome;
     }
 
+
     get sobrenome() {
         return this.#sobrenome;
     }
     set sobrenome(novoSobrenome) {
         this.#sobrenome = novoSobrenome;
     }
+
 
     get cidade() {
         return this.#cidade;
@@ -45,6 +49,7 @@ export default class Consulta {
         this.#cidade = novaCidade;
     }
 
+
     get uf() {
         return this.#uf;
     }
@@ -52,10 +57,10 @@ export default class Consulta {
         this.#uf = novaUf;
     }
 
+
     get telefone() {
         return this.#telefone;
     }
-
     set telefone(novoTelefone) {
         this.#telefone = novoTelefone;
     }

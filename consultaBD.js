@@ -8,16 +8,6 @@ export default class ConsultaBD {
         const valores = [];
         const [rows] = await conexao.query(sql, valores);
         const listaConsultaDadoss = [];
-        // for (const row of rows) {
-        //     const consulta = new Consulta(
-        //         row["cpf"],
-        //         row["nome"],
-        //         row["sobrenome"],
-        //         row["cidade"],
-        //         row["uf"],
-        //         row["telefone"]);
-        //         listaConsultaDadoss.push(consulta);
-        // }
         for (const row of rows) {
             const consulta = {
                 cpf: row["cpf"],
