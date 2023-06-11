@@ -18,7 +18,7 @@ VALUES ('12345678901', 'João', 'Silva', 'São Paulo', 'SP', '987654321'), ('987
 
 
 3) Para executar a aplicação, rode o script abaixo
-docker run -p 3000:3000 --atvcloudfinal -d aalexandrefernandez88/atvcloudfinal:0.0.2
+docker run -p 3000:3000 --atvcloudfinal -d alexandrefernandez88/atvcloudfinal:0.0.2
 
 4) Abra a URL http://localhost:3000
 
