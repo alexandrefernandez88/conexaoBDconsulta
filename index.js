@@ -15,7 +15,8 @@ app.get('/', (request, response) => {
         });
 });
 
-app.get('/consulta-dados', rotaConsulta)
+app.use('/consulta-dados', rotaConsulta)
+
 app.get('/readiness', (request, response) => {
     return response
         .status(200)
