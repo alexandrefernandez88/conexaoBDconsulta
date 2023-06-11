@@ -9,7 +9,7 @@ export default async function conectar() {
         // host: "localhost",
         host: "mysql",
         user: "root",
-        password: "",
+        password: "passwd",
         database: "atvcloudfinal"
     });
 
