@@ -8,7 +8,7 @@ export default async function conectar() {
     const conexao = mysql.createConnection({
         // host: "localhost",
         host: "mysql",
-        user: "root",
+        user: "user",
         password: "passwd",
         database: "atvcloudfinal"
     });

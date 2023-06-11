@@ -19,20 +19,21 @@ services:
       - atvcloudfinal
 
   nodejs:
+    build: .
+    container_name: nodejs
     image: alexandrefernandez88/atvcloudfinal:0.0.3
     restart: always
-    container_name: atvcloudfinal
     networks:
       - atvcloudfinal
     tty: true
+    depends_on:
+      - mysql
     ports:
       - "3000:3000"
 
 networks:
   atvcloudfinal:
-
-
-
+    driver: bridge
 
 
 
