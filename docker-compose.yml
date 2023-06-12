@@ -21,7 +21,7 @@ services:
   nodejs:
     build: 
       context: .
-    image: alexandrefernandez88/atvcloudfinal:0.0.5
+    image: alexandrefernandez88/atvcloudfinal:0.0.6
     restart: always
     container_name: nodejs
     networks:
@@ -29,6 +29,8 @@ services:
     tty: true
     ports:
       - "3000:3000"
+    depends_on:
+      - mysql
 
 networks:
   atvcloudfinal:
