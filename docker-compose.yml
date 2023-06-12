@@ -7,11 +7,10 @@ services:
       - atvcloudfinal
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: atvcloudfinal
       MYSQL_USER: root
-      MYSQL_PASSWORD: admin
+      MYSQL_PASSWORD: user
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./docker/mysql/scripts:/docker-entrypoint-initdb.d
@@ -20,6 +19,8 @@ services:
       - "3306:3306"
 
   nodejs:
+    build: 
+      context: .
     image: alexandrefernandez88/atvcloudfinal:0.0.5
     restart: always
     container_name: nodejs
