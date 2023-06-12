@@ -1,5 +1,3 @@
-# conjunto de instrução para gerar o container da aplicação
-
 FROM node:18-slim
 
 ENV NODE_ENV development

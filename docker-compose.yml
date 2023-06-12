@@ -3,34 +3,31 @@ services:
   mysql:
     image: mysql:latest
     container_name: mysql
+    networks:
+      - atvcloudfinal
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_ROOT_HOST: '%'
       MYSQL_DATABASE: atvcloudfinal
       MYSQL_USER: root
       MYSQL_PASSWORD: admin
-    restart: always
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./docker/mysql/scripts:/docker-entrypoint-initdb.d
       - ./mysql_data:/var/lib/mysql
-      - .:/docker-entrypoint-initdb.d/:rw
-    networks:
-      - atvcloudfinal
+    ports:
+      - "3306:3306"
 
   nodejs:
-    build:
-      context: .
-      dockerfile: dockerfile
-    container_name: nodejs
-    image: alexandrefernandez88/atvcloudfinal:0.0.4
+    image: alexandrefernandez88/atvcloudfinal:0.0.5
     restart: always
+    container_name: nodejs
     networks:
       - atvcloudfinal
     tty: true
-    depends_on:
-      - mysql
     ports:
       - "3000:3000"
 
 networks:
-  atvcloudfinal
+  atvcloudfinal:
