@@ -20,7 +20,7 @@ services:
   nodejs:
     build: 
       context: .
-    image: alexandrefernandez88/atvcloudfinal:0.0.7
+    image: alexandrefernandez88/atvcloudfinal:0.0.1
     restart: always
     container_name: nodejs
     networks:

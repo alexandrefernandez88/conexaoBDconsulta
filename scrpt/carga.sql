@@ -1,5 +1,3 @@
-CREATE SCHEMA `atvcloudfinal` ;
-
 CREATE TABLE IF NOT EXISTS `atvcloudfinal`.`consultadados` (
   `cpf` varchar(14) NOT NULL,
   `nome` varchar(60) NOT NULL,
