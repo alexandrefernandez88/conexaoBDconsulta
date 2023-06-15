@@ -1,7 +1,6 @@
 1) Para executar o banco de dados, rode o script abaixo:
+docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=root -e MYSQL_DATABASE=atvcloudfinal mysql/mysql-server:latest
 
-docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=user -e MYSQL_DATABASE=atvcloudfinal mysql/mysql-server:latest
-docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=user -e MYSQL_PASSWORD=passwd -e MYSQL_DATABASE=db_aula mysql/mysql-server:latest
 
 2) Execute os scripts abaixo de INSERT
 CREATE TABLE IF NOT EXISTS `consultadados` (
@@ -19,37 +18,17 @@ VALUES ('12345678901', 'João', 'Silva', 'São Paulo', 'SP', '987654321'), ('987
 
 
 3) Para executar a aplicação, rode o script abaixo
-docker run -p 3000:3000 --atvcloudfinal -d alexandrefernandez88/atvcloudfinal:0.0.4
+docker run -p 3000:3000 --atvcloudfinal -d alexandrefernandez88/atvcloudfinal:0.0.7
 
-4) Abra a URL http://localhost:3000
 
-5) Teste também as URLs:
+4) Teste as URL's:
+    http://localhost:3000
     http://localhost:3000/readiness
     http://localhost:3000/liveness
     http://localhost:3000/consulta-dados
 
-5) O link do GitHub é https://github.com/alexandrefernandez88/atvcloudfinal e do DockerHub é https://hub.docker.com/repository/docker/alexandrefernandez88/atvcloudfinal/general
 
+5) Seguem os links:
+GitHub é: https://github.com/alexandrefernandez88/atvcloudfinal 
+Docker é: https://hub.docker.com/r/alexandrefernandez88/atvcloudfinal
 
-
-
-
-
-  index:
-    build: 
-      context: .
-      dockerfile: dockerfile
-    image: alexandrefernandez88/atvcloudfinal:0.0.2
-    container_name: nodejs
-    restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - atvcloudfinal
-    depends_on:
-      - mysql
-
-
-
-  - ./docker/mysql/scripts:/docker-entrypoint-initdb.d
-  - ./mysql_data:/var/lib/mysql
